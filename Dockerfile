@@ -1,11 +1,11 @@
 FROM ruby:3.1
 
-RUN mkdir /myapp
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+RUN mkdir /skill_sheet_api
+WORKDIR /skill_sheet_api
+COPY Gemfile /skill_sheet_api/Gemfile
+COPY Gemfile.lock /skill_sheet_api/Gemfile.lock
 RUN bundle install
-COPY . /myapp
+COPY . /skill_sheet_api
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
